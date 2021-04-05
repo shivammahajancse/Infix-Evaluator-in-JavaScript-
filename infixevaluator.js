@@ -157,8 +157,10 @@ function InfixtoPostfix()
     }
     var st="";
     
-    for(var i=0;i<postfix.length;i++)st+=postfix[i];
-    
+    for(var i=0;i<postfix.length;i++)
+    {
+        st+=postfix[i];
+    }
    postfixevaluator(st);
  }
  
