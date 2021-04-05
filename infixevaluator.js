@@ -99,4 +99,12 @@ function InfixtoPostfix()
     var temp2="";
     for(var i=0;i<infixstring.length;i++)
     {
+        if(operator(infixstring[i]))
+        {
+            infixval.push(temp2);
+            infixval.push(infixstring[i]);
+            temp2="";
+        }
       
+ }
+ 
