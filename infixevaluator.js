@@ -105,6 +105,13 @@ function InfixtoPostfix()
             infixval.push(infixstring[i]);
             temp2="";
         }
-      
+        else temp2+=infixstring[i];
+    }
+    if(temp2!=="")
+    {
+        infixval.push(temp2);
+    }
+   
+   
  }
  
