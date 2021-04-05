@@ -87,3 +87,9 @@ function precedency(pre)
     else
     return 0;
 }
+
+
+function InfixtoPostfix()
+{
+    var postfix=[];
+  
