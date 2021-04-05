@@ -115,6 +115,16 @@ function InfixtoPostfix()
     for(var i=0;i<infixval.length;i++)
     {
         var el=infixval[i];
-     
- }
- 
+        if(operator(el))
+        {
+            if (el ==')') {
+                while (stackarr[topp] != "(") {
+                  postfix[temp++] = pop();
+                  postfix[temp++]="$";
+                }
+          pop();
+            }
+            else if(el=='(')
+            {
+                push(el);
+            }
