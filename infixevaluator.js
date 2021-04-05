@@ -112,6 +112,9 @@ function InfixtoPostfix()
         infixval.push(temp2);
     }
    
-   
+    for(var i=0;i<infixval.length;i++)
+    {
+        var el=infixval[i];
+     
  }
  
