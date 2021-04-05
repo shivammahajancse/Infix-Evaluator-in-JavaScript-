@@ -97,4 +97,6 @@ function InfixtoPostfix()
     infixstring= document.getElementById("infixvalue").value;
     var infixval=[];
     var temp2="";
-   
+    for(var i=0;i<infixstring.length;i++)
+    {
+      
