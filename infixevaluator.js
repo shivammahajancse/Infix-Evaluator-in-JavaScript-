@@ -37,3 +37,12 @@ function postfixevaluator(evalst)
    }
    document.getElementById("text").innerHTML=(pop());
 }
+
+function push(e)
+{
+   topp++;
+   stackarr[topp]=e;
+}
+
+
+ 
