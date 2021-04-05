@@ -150,6 +150,13 @@ function InfixtoPostfix()
 
         
     }
+    while(stackarr[topp]!='@')
+    {
+        postfix[temp++]=pop();
+        postfix[temp++]="$"
+    }
+    var st="";
     
+   
  }
  
