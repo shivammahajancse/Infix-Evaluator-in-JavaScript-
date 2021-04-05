@@ -133,6 +133,16 @@ function InfixtoPostfix()
             {
                 push(el);
             }
-           
+            else
+            {
+                while(precedency(el)<=precedency(stackarr[topp])&&topp>-1)
+                {
+                     postfix[temp++]=pop();
+                     postfix[temp++]="$"
+                }
+                push(el);
+            }
+        }
+        
  }
  
