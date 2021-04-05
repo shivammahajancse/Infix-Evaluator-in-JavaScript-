@@ -44,5 +44,14 @@ function push(e)
    stackarr[topp]=e;
 }
 
-
- 
+function pop()
+{
+    if(topp==-1)
+    return 0;
+    else
+    {
+        var popped_ele=stackarr[topp];
+        topp--;
+        return popped_ele;
+    }
+}
