@@ -128,3 +128,11 @@ function InfixtoPostfix()
             {
                 push(el);
             }
+
+            else if(precedency(el)>precedency(stackarr[topp]))
+            {
+                push(el);
+            }
+           
+ }
+ 
