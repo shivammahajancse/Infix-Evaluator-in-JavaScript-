@@ -55,3 +55,15 @@ function pop()
         return popped_ele;
     }
 }
+
+function operator(op)
+{
+    if(op=='+' || op=='-' || op=='^' || op=='*' || op=='/' || op=='(' || op==')')
+    {
+        return true;
+    }
+    else
+    return false;
+}
+
+ 
