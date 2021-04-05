@@ -143,6 +143,13 @@ function InfixtoPostfix()
                 push(el);
             }
         }
+        else{
+            postfix[temp++]=el;
+            postfix[temp++]="$"
+        }
+
         
+    }
+    
  }
  
