@@ -49,7 +49,8 @@ function postfixevaluator(evalst) {
 
         // if (!operator(tokens[i])) {
         //     push(tokens[i]);
-        } else {
+        //} 
+       else {
             var op1 = parseFloat(pop().trim());
             var op2 = parseFloat(pop().trim());
             switch (tokens[i]) {
@@ -59,6 +60,7 @@ function postfixevaluator(evalst) {
                 case "/": push(op2 / op1); break;
             }
         }
+    }
     document.getElementById("text").innerHTML = pop();
 }
 function push(e)
