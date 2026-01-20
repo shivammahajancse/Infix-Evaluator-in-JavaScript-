@@ -72,7 +72,7 @@ function push(e)
 function pop()
 {
     if(topp==-1)
-    return 0;
+    return "";
     else
     {
         var popped_ele=stackarr[topp];
