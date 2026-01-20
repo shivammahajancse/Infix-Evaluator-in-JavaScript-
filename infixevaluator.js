@@ -121,16 +121,34 @@ function InfixtoPostfix()
     infixstring= document.getElementById("infixvalue").value;
     var infixval=[];
     var temp2="";
-    for(var i=0;i<infixstring.length;i++)
-    {
-        if(operator(infixstring[i]))
-        {
-            infixval.push(temp2);
-            infixval.push(infixstring[i]);
-            temp2="";
+    // for(var i=0;i<infixstring.length;i++)
+    // {
+    //     if(operator(infixstring[i]))
+    //     {
+    //         infixval.push(temp2);
+    //         infixval.push(infixstring[i]);
+    //         temp2="";
+    //     }
+    //     else temp2+=infixstring[i];
+    // }
+    for (var i = 0; i < infixstring.length; i++) {
+    let ch = infixstring[i];
+
+    if (operator(ch)) {
+        // handle unary minus (negative numbers)
+        if (ch === '-' && (i === 0 || operator(infixstring[i - 1]) || infixstring[i - 1] === '(')) {
+            temp2 += ch; // part of the number, not a separate operator
+        } else {
+            if (temp2 !== "") {
+                infixval.push(temp2);
+                temp2 = "";
+            }
+            infixval.push(ch);
         }
-        else temp2+=infixstring[i];
+    } else {
+        temp2 += ch;
     }
+}    
     if(temp2!=="")
     {
         infixval.push(temp2);
