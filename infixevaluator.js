@@ -59,7 +59,6 @@ function postfixevaluator(evalst) {
                 case "/": push(op2 / op1); break;
             }
         }
-    }
     document.getElementById("text").innerHTML = pop();
 }
 function push(e)
