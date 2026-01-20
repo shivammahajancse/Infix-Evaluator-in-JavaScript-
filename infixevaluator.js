@@ -43,8 +43,12 @@ function postfixevaluator(evalst) {
     console.log(tokens);
     for (var i = 0; i < tokens.length; i++) {
         if (tokens[i] === "") continue; // skip empty
-        if (!operator(tokens[i])) {
-            push(tokens[i]);
+               if (!operator(tokens[i]) && tokens[i].trim() !== "") {
+    push(tokens[i]);
+}
+
+        // if (!operator(tokens[i])) {
+        //     push(tokens[i]);
         } else {
             var op1 = parseFloat(pop().trim());
             var op2 = parseFloat(pop().trim());
