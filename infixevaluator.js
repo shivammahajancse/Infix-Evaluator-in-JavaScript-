@@ -2,42 +2,62 @@ var stackarr=[];
 var topp=-1;
 var evalstack=[];
 
-function postfixevaluator(evalst)
-{
-    eval=evalst.split("$");
-    console.log(eval);
-   for(var i=0;i<eval.length-1;i++)
-   {
-       if(!operator(eval[i]))
-       {
-           push(eval[i]);
-       }
-       else
-       {
-           var op1=parseInt(pop());
-           var op2=parseInt(pop());
+// function postfixevaluator(evalst)
+// {
+//     eval=evalst.split("$");
+//     console.log(eval);
+//    for(var i=0;i<eval.length-1;i++)
+//    {
+//        if(!operator(eval[i]))
+//        {
+//            push(eval[i]);
+//        }
+//        else
+//        {
+//            var op1=parseInt(pop());
+//            var op2=parseInt(pop());
            
-           if(eval[i]=="+")
-           {
-               push(op2+op1);
-           }
-           else if(eval[i]=="-")
-           {
-               push(op2-op1);
-           }
-           else if(eval[i]=="*")
-           {
-               push(op2*op1);
-           }
-           else
-           {
-               push(op2/op1);
-           }
-       }
-   }
-   document.getElementById("text").innerHTML=(pop());
-}
+//            if(eval[i]=="+")
+//            {
+//                push(op2+op1);
+//            }
+//            else if(eval[i]=="-")
+//            {
+//                push(op2-op1);
+//            }
+//            else if(eval[i]=="*")
+//            {
+//                push(op2*op1);
+//            }
+//            else
+//            {
+//                push(op2/op1);
+//            }
+//        }
+//    }
+//    document.getElementById("text").innerHTML=(pop());
+// }
 
+function postfixevaluator(evalst) {
+    let tokens = evalst.split("$");
+    console.log(tokens);
+    for (var i = 0; i < tokens.length; i++) {
+        if (tokens[i] === "") continue; // skip empty
+        if (!operator(tokens[i])) {
+            push(tokens[i]);
+        } else {
+            var op1 = parseFloat(pop().trim());
+            var op2 = parseFloat(pop().trim());
+            switch (tokens[i]) {
+                case "+": push(op2 + op1); break;
+                case "-": push(op2 - op1); break;
+                case "*": push(op2 * op1); break;
+                case "/": push(op2 / op1); break;
+            }
+        }
+    }
+    document.getElementById("text").innerHTML = pop();
+}
 function push(e)
 {
    topp++;
